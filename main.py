@@ -84,7 +84,7 @@ class VAE(nn.Module):
     
     def decode(self, z):
         z = self.decoder_linear(z)
-        z = z.view(-1, 64, 7, 7)  # This is now correct
+        z = z.view(-1, 64, 7, 7)  
         z = self.decoder_block1(z)
         z = self.decoder_block2(z)
         z = self.decoder_block3(z)
